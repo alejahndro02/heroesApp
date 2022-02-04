@@ -29,7 +29,7 @@
       "@heroe/*":["src/app/heroes/pages/heroe/*"],
       "@heroes-home/*":["src/app/heroes/pages/heroes-home/*"],
       "@listado/*":["src/app/heroes/pages/listado/*"],
-      "@shared/*":["src/app/shared/*"],
+      "@error/*":["src/app/shared/error-page/*"],
 
 
       "@assets/*":["src/assets/*"],
