@@ -21,7 +21,17 @@
     "paths": {
       "@amaterial/*":["src/app/a-material/*"],
       "@auth/*":["src/app/auth/*"],
+      "@login/*":["src/app/auth/pages/login/*"],
+      "@registro/*":["src/app/auth/pages/registro/*"],
       "@heroes/*":["src/app/heroes/*"],
+      "@agregar/*":["src/app/heroes/pages/agregar/*"],
+      "@buscar/*":["src/app/heroes/pages/buscar/*"],
+      "@heroe/*":["src/app/heroes/pages/heroe/*"],
+      "@heroes-home/*":["src/app/heroes/pages/heroes-home/*"],
+      "@listado/*":["src/app/heroes/pages/listado/*"],
+      "@shared/*":["src/app/shared/*"],
+
+
       "@assets/*":["src/assets/*"],
     },
     "lib": [
