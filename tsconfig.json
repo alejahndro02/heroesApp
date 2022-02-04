@@ -18,10 +18,14 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "paths": {
+      "@amaterial/*":["src/app/a-material/*"],
+      "@assets/*":["src/assets/*"],
+    },
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
