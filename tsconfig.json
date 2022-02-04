@@ -20,6 +20,8 @@
     "module": "es2020",
     "paths": {
       "@amaterial/*":["src/app/a-material/*"],
+      "@auth/*":["src/app/auth/*"],
+      "@heroes/*":["src/app/heroes/*"],
       "@assets/*":["src/assets/*"],
     },
     "lib": [
