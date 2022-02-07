@@ -27,11 +27,12 @@
       "@agregar/*":["src/app/heroes/pages/agregar/*"],
       "@buscar/*":["src/app/heroes/pages/buscar/*"],
       "@heroe/*":["src/app/heroes/pages/heroe/*"],
+      "@interface/*":["src/app/heroes/interface/*"],
       "@heroes-home/*":["src/app/heroes/pages/heroes-home/*"],
       "@listado/*":["src/app/heroes/pages/listado/*"],
       "@error/*":["src/app/shared/error-page/*"],
-
-
+      "@tarjeta/*":["src/app/heroes/components/tarjeta/*"],
+      "@pipes/*":["src/app/heroes/pipes/*"],
       "@assets/*":["src/assets/*"],
     },
     "lib": [
