@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Heroe } from '@heroes/interface/heroes.interface';
+import { Heroe      } from '@interface/heroes.interface';
 import { Observable } from 'rxjs';
 
 

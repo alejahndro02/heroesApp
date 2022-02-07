@@ -1,7 +1,7 @@
-import { Input } from '@angular/core';
+import { Input             } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { Heroe } from '@heroes/interface/heroes.interface';
-import { HeroesService } from '@heroes/services/heroes.service';
+import { Heroe             } from '@interface/heroes.interface';
+import { HeroesService     } from '@heroes/services/heroes.service';
 
 @Component({
   selector: 'app-tarjeta',
