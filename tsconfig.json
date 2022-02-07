@@ -33,6 +33,7 @@
       "@error/*":["src/app/shared/error-page/*"],
       "@tarjeta/*":["src/app/heroes/components/tarjeta/*"],
       "@pipes/*":["src/app/heroes/pipes/*"],
+      "@services/*":["src/app/heroes/services/*"],
       "@assets/*":["src/assets/*"],
     },
     "lib": [
