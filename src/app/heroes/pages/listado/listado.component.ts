@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesService     } from '@heroes/services/heroes.service';
-import { Heroe             } from '@heroes/interface/heroes.interface';
+import { HeroesService     } from '@services/heroes.service';
+import { Heroe             } from '@interface/heroes.interface';
 
 @Component({
   selector: 'app-listado',
