@@ -10,6 +10,7 @@ import { BuscarComponent     } from '@buscar/buscar.component';
 import { HeroeComponent      } from '@heroe/heroe.component';
 import { HeroesHomeComponent } from '@heroes-home/heroes-home.component';
 import { ListadoComponent    } from '@listado/listado.component';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ListadoComponent    } from '@listado/listado.component';
     BuscarComponent,
     HeroeComponent,
     HeroesHomeComponent,
-    ListadoComponent
+    ListadoComponent,
+    TarjetaComponent
   ],
   imports: [
     CommonModule,
