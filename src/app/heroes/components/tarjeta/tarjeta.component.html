@@ -1,9 +1,12 @@
  <mat-card>
+
     <mat-card-header>
       <mat-card-title> {{superHeroe.superhero}} </mat-card-title>
       <mat-card-subtitle> {{superHeroe.alter_ego}} </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src= "assets/heroes/{{superHeroe.id}}.jpg" alt="Photo of a Shiba Inu">
+
+    <img mat-card-image [src]= "superHeroe | imagenHeroe" alt="Photo of a Shiba Inu">
+
     <mat-card-content>
         <h3> {{superHeroe.publisher}}</h3>
       <p>
@@ -12,8 +15,11 @@
           <strong>Personajes: </strong> {{superHeroe.characters}}
       </p>
     </mat-card-content>
+
     <mat-card-actions>
       <button mat-button color="warn">Leer Mas</button>
       <button mat-button color="info">editar</button>
     </mat-card-actions>
+    
 </mat-card>
+
