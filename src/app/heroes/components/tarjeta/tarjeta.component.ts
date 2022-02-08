@@ -1,7 +1,6 @@
 import { Input             } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Heroe             } from '@interface/heroes.interface';
-import { HeroesService     } from '@heroes/services/heroes.service';
 
 @Component({
   selector: 'app-tarjeta',
@@ -13,9 +12,8 @@ import { HeroesService     } from '@heroes/services/heroes.service';
   ]
 })
 export class TarjetaComponent implements OnInit {
-  @Input() superHeroe! : Heroe
-  constructor(private heroesService: HeroesService) { }
-
+  @Input() superHeroe! : Heroe;
+  constructor() { }
   ngOnInit(): void {
   }
 
