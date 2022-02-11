@@ -1,9 +1,9 @@
-import { ActivatedRoute, Router    } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { switchMap         } from 'rxjs/operators';
-
-import { Heroe             } from '@interface/heroes.interface';
-import { HeroesService } from '@heroes/services/heroes.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit      } from '@angular/core';
+import { switchMap              } from 'rxjs/operators';
+        
+import { Heroe                  } from '@interface/heroes.interface';
+import { HeroesService          } from '@heroes/services/heroes.service';
 
 @Component({
   selector: 'app-heroe',
