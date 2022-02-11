@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Heroe      } from '@interface/heroes.interface';
-import { Observable } from 'rxjs';
+import { Injectable  } from '@angular/core';
+import { HttpClient  } from '@angular/common/http';
+import { Heroe       } from '@interface/heroes.interface';
+import { Observable  } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 
@@ -18,5 +18,8 @@ export class HeroesService {
   }
   getHeroesId( id:string ):Observable<Heroe>{
     return this.http.get<Heroe>(`${this.dataUrl}/heroes/${ id }`)
+  }
+  getSugerencias(termino:string):Observable<Heroe[]>{
+    return this.http.get<Heroe[]>(`${this.dataUrl}/heroes?q=${termino}&_limit=6`)
   }
 }
