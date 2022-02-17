@@ -10,20 +10,32 @@ import { HeroesService                } from '@heroes/services/heroes.service';
   ]
 })
 export class BuscarComponent implements OnInit {
-  termino:string="";
-  superHeroes!: Heroe[];
+  termino: string = '';
+  superHeroes: Heroe[] = [];
+  hereoSeleccionado!: Heroe | undefined;
+  
   constructor(private heroesService: HeroesService) { }
 
   ngOnInit(): void {
   }
+  
   buscando(){
-    // this.heroesService.getHeroes().subscribe(heroes=> this.superHeroes = heroes)
-    this.heroesService.getSugerencias(this.termino).subscribe(heroes=> this.superHeroes = heroes)
-
+    this.heroesService.getSugerencias(this.termino.trim())
+    .subscribe(heroes=> this.superHeroes = heroes)
   }
+
   opcionSeleccionada(event:MatAutocompleteSelectedEvent){
-    console.log(event);
+
+    if(!event.option.value){
+      this.hereoSeleccionado = undefined
+    return
+ }
+    const superHeroeSelected:Heroe = event.option.value
     
+    this.termino = superHeroeSelected.superhero
+    
+    this.heroesService.getHeroesId(superHeroeSelected.id!)
+      .subscribe( superHeroeSelected => this.hereoSeleccionado = superHeroeSelected ) 
   }
 
 }
