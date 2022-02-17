@@ -6,7 +6,7 @@ import { AgregarComponent     } from '@agregar/agregar.component';
 import { BuscarComponent      } from '@buscar/buscar.component';
 import { HeroeComponent       } from '@heroe/heroe.component';
 import { ListadoComponent     } from '@listado/listado.component';
-import { HeroesHomeComponent } from './pages/heroes-home/heroes-home.component';
+import { HeroesHomeComponent  } from './pages/heroes-home/heroes-home.component';
 
 const routes : Routes =[
   {

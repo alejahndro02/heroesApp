@@ -20,6 +20,6 @@ export class HeroesService {
     return this.http.get<Heroe>(`${this.dataUrl}/heroes/${ id }`)
   }
   getSugerencias(termino:string):Observable<Heroe[]>{
-    return this.http.get<Heroe[]>(`${this.dataUrl}/heroes?q=${termino}&_limit=6`)
+    return this.http.get<Heroe[]>(`${this.dataUrl}/heroes?q=${termino}&_limit=5`)
   }
 }

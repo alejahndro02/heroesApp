@@ -1,7 +1,7 @@
 import { NgModule            } from '@angular/core';
 import { CommonModule        } from '@angular/common';
 import { FlexLayoutModule    } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule         } from '@angular/forms';
 
 import { AMaterialModule     } from '@amaterial/a-material.module';
 import { HeroesRoutingModule } from '@heroes/heroes-routing.module'
