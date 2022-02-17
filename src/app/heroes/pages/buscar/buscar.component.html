@@ -6,7 +6,7 @@
         </h1>
         <mat-divider></mat-divider>
     </div>
-    <div>
+    <div fxLayout="column">
         <h3>
             Buscador
         </h3>
@@ -19,11 +19,25 @@
                    [(ngModel)]="termino"
                    [matAutocomplete]="auto"
                    (input)="buscando()">
-            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="opcionSeleccionada($event)">
+            <mat-autocomplete 
+                autoActiveFirstOption  
+                #auto="matAutocomplete" 
+                (optionSelected)="opcionSeleccionada($event)">
               <mat-option *ngFor="let heroe of superHeroes " [value]="heroe">
                 {{heroe.superhero}}
               </mat-option>
+              <mat-option value="" *ngIf="superHeroes.length === 0 && termino.trim().length > 0">
+                  No se encontro el {{termino}}
+              </mat-option>
             </mat-autocomplete>
         </mat-form-field>
+    </div>
+    <div>
+        <pre>
+            {{hereoSeleccionado |json}}
+        </pre>
+    </div>
+    <div *ngIf="hereoSeleccionado">
+        <app-tarjeta [superHeroe]= "hereoSeleccionado"></app-tarjeta>
     </div>
 </div>
