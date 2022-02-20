@@ -1,4 +1,4 @@
-<h1>Nuevo Herore <small>{{heroe.superhero}}</small></h1>
+<h1>Nuevo Herore <small>{{heroeObj.superhero}}</small></h1>
 
 <div fxLayout="row" fxLayoutGap="40px">
 
@@ -8,16 +8,16 @@
              fxLayout.xs="column" 
              fxLayoutGap="20px">
             <mat-form-field fxFlex="100">
-                <mat-label>Super Heroe</mat-label>
+                <mat-label>Super HeroeObj</mat-label>
                 <input matInput type="text" 
-                       [(ngModel)]="heroe.superhero" 
+                       [(ngModel)]="heroeObj.superhero" 
                        required>
             </mat-form-field>
 
             <mat-form-field fxFlex="100">
                 <mat-label>Alter Ego</mat-label>
                 <input matInput type="text" 
-                       [(ngModel)]="heroe.alter_ego" 
+                       [(ngModel)]="heroeObj.alter_ego" 
 
                        required>
             </mat-form-field>
@@ -26,21 +26,21 @@
         <mat-form-field fxFlex="100">
             <mat-label>Primera Aparicion</mat-label>
             <input matInput type="text" 
-                   [(ngModel)]="heroe.first_appearance" 
+                   [(ngModel)]="heroeObj.first_appearance" 
                    required>
         </mat-form-field>
 
         <mat-form-field fxFlex="100">
             <mat-label>Personajes</mat-label>
             <input matInput type="text" 
-                   [(ngModel)]="heroe.characters" 
+                   [(ngModel)]="heroeObj.characters" 
                    required>
         </mat-form-field>
        
         <mat-form-field fxFlex="100">
             <mat-label>Creador</mat-label>
             
-               <mat-select [(ngModel)]="heroe.publisher" required>
+               <mat-select [(ngModel)]="heroeObj.publisher" required>
                 
                 <mat-option 
                     *ngFor="let publisher of publishers" 
@@ -56,7 +56,7 @@
         <mat-form-field fxFlex="100">
             <mat-label>Foto</mat-label>
             <input matInput type="url" 
-                   [(ngModel)]="heroe.alt_img"
+                   [(ngModel)]="heroeObj.alt_img"
                    required>
         </mat-form-field>
         <button mat-raised-button 
@@ -68,7 +68,9 @@
     </div>
     
     <div fxFlex="50" fxLayout.xs="column">
-        <img [src]="heroe | imagenHeroe" alt="">
+        <img [src]="heroeObj | imagenHeroe" alt="">
+        <!-- <img src="../../../../assets/no-image.png" alt=""> -->
+
     </div>
 </div>
 
