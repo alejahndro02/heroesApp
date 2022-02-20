@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Heroe, Publisher } from '@heroes/interface/heroes.interface';
+import { Component, OnInit  } from '@angular/core';
+import { Heroe, Publisher   } from '@heroes/interface/heroes.interface';
+import { HeroesService      } from '@heroes/services/heroes.service';
 
 @Component({
   selector: 'app-agregar',
@@ -28,9 +29,17 @@ heroe:Heroe={
   characters:       '',
   alt_img:          ''
 }
-  constructor() { }
+  constructor(private heroesService:HeroesService) { }
 
   ngOnInit(): void {
   }
-
+  guardarPersonaje(){
+    if (this.heroe.superhero.trim().length === 0){
+      return
+    }
+    this.heroesService.agregarHeroe(this.heroe)
+        .subscribe(resp => {
+          console.log(resp);
+        })
+  }
 }
