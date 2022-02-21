@@ -1,13 +1,18 @@
-import { Component, OnInit  } from '@angular/core';
-import { ActivatedRoute, Router     } from '@angular/router';
-import { Heroe, Publisher   } from '@heroes/interface/heroes.interface';
-import { HeroesService      } from '@heroes/services/heroes.service';
-import { switchMap          } from 'rxjs';
+import { Component, OnInit      } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Heroe, Publisher       } from '@heroes/interface/heroes.interface';
+import { HeroesService          } from '@heroes/services/heroes.service';
+import { switchMap              } from 'rxjs';
 
 @Component({
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
-  styles: [
+  styles: [`
+    img{
+      width:100%;
+      border-radius:5px
+    }
+  `
   ]
 })
 export class AgregarComponent implements OnInit {
@@ -36,6 +41,10 @@ heroeObj:Heroe={
                private router: Router)  { }
 
   ngOnInit(): void {
+    this.router.url.includes('editar')
+    if(!this.router.url.includes('editar')){
+      return
+    }
     this.activatedRoutes.params
         .pipe(
           switchMap( ( { id } ) => this.heroesService.getHeroesId( id ) )
@@ -56,5 +65,5 @@ heroeObj:Heroe={
       })
     }
   }
-    
+
 }
