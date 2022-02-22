@@ -8,6 +8,7 @@ import { HeroesRoutingModule } from '@heroes/heroes-routing.module'
 
 import { AgregarComponent    } from '@agregar/agregar.component';
 import { BuscarComponent     } from '@buscar/buscar.component';
+import { DialogoComponent    } from './components/dialogo/dialogo.component';
 import { HeroeComponent      } from '@heroe/heroe.component';
 import { HeroesHomeComponent } from '@heroes-home/heroes-home.component';
 import { ListadoComponent    } from '@listado/listado.component';
@@ -18,6 +19,7 @@ import { ImagenHeroePipe     } from './pipes/imagen-heroe.pipe';
   declarations: [
     AgregarComponent,
     BuscarComponent,
+    DialogoComponent,
     HeroeComponent,
     HeroesHomeComponent,
     ListadoComponent,
