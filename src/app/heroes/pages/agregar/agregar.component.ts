@@ -1,10 +1,12 @@
 import { Component, OnInit      } from '@angular/core';
+import { MatDialog              } from '@angular/material/dialog';
 import { MatSnackBar            } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap              } from 'rxjs';
 
 import { Heroe, Publisher       } from '@heroes/interface/heroes.interface';
 import { HeroesService          } from '@heroes/services/heroes.service';
+import { DialogoComponent       } from '@dialogo/dialogo.component';
 
 @Component({
   selector: 'app-agregar',
@@ -38,10 +40,12 @@ heroeObj:Heroe={
   characters:       '',
   alt_img:          ''
 }
+
   constructor( private heroesService:HeroesService, 
                private activatedRoutes: ActivatedRoute,
                private router: Router,
-               private _snackBar: MatSnackBar)  { }
+               private _snackBar: MatSnackBar,
+               public  dialog: MatDialog)  { }
 
   ngOnInit(): void {
     this.router.url.includes('editar')
@@ -72,10 +76,20 @@ heroeObj:Heroe={
     }
   }
   eliminarPersonaje(){
-    this.heroesService.eliminarHeroe(this.heroeObj.id!)
-    .subscribe(resp => {
-      this.router.navigate(['/heroes'])
+    const dialog = this.dialog.open(DialogoComponent, {
+      width:'450px', 
+      data: {...this.heroeObj}
     })
+    dialog.afterClosed().subscribe(
+      (result)=>{
+        if(result){
+          this.heroesService.eliminarHeroe(this.heroeObj.id!)
+          .subscribe(resp => {
+            this.router.navigate(['/heroes'])
+          })
+        }
+      }
+    )
   }
   mostrarSnackBar(msj:string){
     this._snackBar.open(msj, 'OK!!', {
@@ -83,3 +97,4 @@ heroeObj:Heroe={
     })
   }
 }
+
