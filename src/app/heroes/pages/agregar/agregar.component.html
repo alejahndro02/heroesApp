@@ -57,12 +57,23 @@
                    [(ngModel)]="heroeObj.alt_img"
                    required>
         </mat-form-field>
-        <button mat-raised-button 
-                (click)="guardarPersonaje()"
-                color="primary">
-            <mat-icon>upload</mat-icon>
-            Guardar
-        </button>
+
+        <div fxLayout="row">
+            <button mat-raised-button 
+                    (click)="guardarPersonaje()"
+                    color="primary">
+                <mat-icon>upload</mat-icon>
+                Guardar
+            </button>
+            <span class="spacer"></span>
+            <button *ngIf="heroeObj.id"
+                    mat-raised-button 
+                    (click)="eliminarPersonaje()"
+                    color="warn">
+                <mat-icon>remove</mat-icon>
+                Eliminar
+            </button>
+        </div>
     </div>
     
     <div fxFlex="50" fxLayout.xs="column">
