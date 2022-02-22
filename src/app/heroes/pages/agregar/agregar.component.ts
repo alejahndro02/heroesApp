@@ -1,8 +1,10 @@
 import { Component, OnInit      } from '@angular/core';
+import { MatSnackBar            } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap              } from 'rxjs';
+
 import { Heroe, Publisher       } from '@heroes/interface/heroes.interface';
 import { HeroesService          } from '@heroes/services/heroes.service';
-import { switchMap              } from 'rxjs';
 
 @Component({
   selector: 'app-agregar',
@@ -38,7 +40,8 @@ heroeObj:Heroe={
 }
   constructor( private heroesService:HeroesService, 
                private activatedRoutes: ActivatedRoute,
-               private router: Router)  { }
+               private router: Router,
+               private _snackBar: MatSnackBar)  { }
 
   ngOnInit(): void {
     this.router.url.includes('editar')
@@ -57,11 +60,14 @@ heroeObj:Heroe={
     }
     if(this.heroeObj.id){
       this.heroesService.actualizarHeroe(this.heroeObj)
-      .subscribe(heroeActualizado => console.log('Actulizando', heroeActualizado) )
+      .subscribe(heroeActualizado => {
+        this.mostrarSnackBar('Registro Actualizado')
+      })
     }else{
       this.heroesService.agregarHeroe(this.heroeObj)
         .subscribe( heroeObj => {
           this.router.navigate(['/heroes/editar', heroeObj.id])
+          this.mostrarSnackBar('Registro Creado')
       })
     }
   }
@@ -71,5 +77,9 @@ heroeObj:Heroe={
       this.router.navigate(['/heroes'])
     })
   }
-
+  mostrarSnackBar(msj:string){
+    this._snackBar.open(msj, 'OK!!', {
+      duration:2500
+    })
+  }
 }
