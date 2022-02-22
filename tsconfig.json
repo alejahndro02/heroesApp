@@ -32,6 +32,7 @@
       "@listado/*":["src/app/heroes/pages/listado/*"],
       "@error/*":["src/app/shared/error-page/*"],
       "@tarjeta/*":["src/app/heroes/components/tarjeta/*"],
+      "@dialogo/*":["src/app/heroes/components/dialogo/*"],
       "@pipes/*":["src/app/heroes/pipes/*"],
       "@services/*":["src/app/heroes/services/*"],
       "@assets/*":["src/assets/*"],
