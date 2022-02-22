@@ -23,4 +23,8 @@ export class LoginComponent implements OnInit {
      }
    })
  }
+ logInUnRegistred(){
+   this.authService.logOut();
+   this.router.navigate(['/heroes'])
+ }
 }
