@@ -33,4 +33,3 @@ export class HeroesService {
     return this.http.delete<any>(`${this.dataUrl}/heroes/${id}`)
   }
 }
-
