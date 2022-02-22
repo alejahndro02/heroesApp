@@ -65,5 +65,11 @@ heroeObj:Heroe={
       })
     }
   }
+  eliminarPersonaje(){
+    this.heroesService.eliminarHeroe(this.heroeObj.id!)
+    .subscribe(resp => {
+      this.router.navigate(['/heroes'])
+    })
+  }
 
 }
