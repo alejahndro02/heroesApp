@@ -21,7 +21,9 @@ export class AuthService {
   logIn(){
     return this.http.get<Auth>(`${this.dataUrl}/usuarios/1`)
     .pipe(
-      tap( auth => this._auth = auth)
+      tap( auth => this._auth = auth),
+      tap( auth => localStorage.setItem('id',auth.id))
+
     )
   }
   logOut(){
